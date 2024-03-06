@@ -1,0 +1,28 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  height: 38px;
+
+  & .text {
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 19px;
+    font-family: sans-serif;
+    color: #ffffff;
+  }
+}
+
+.sign-up-button {
+  font-size: 14px;
+  font-weight: 500px;
+  line-height: 19px;
+  font-family: sans-serif;
+  color: #fff;
+  margin-left: 5px;
+}
