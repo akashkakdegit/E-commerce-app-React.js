@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateQuantity } from "../store/cartSlice";
 import { IoMdAdd } from "react-icons/io";
 import { IoMdRemove } from "react-icons/io";
-import "./QuantityControl.css"
+import "./QuantityControl.css";
 
 const QuantityControl = ({ count, itemId }) => {
   const dispatch = useDispatch();
@@ -18,12 +18,10 @@ const QuantityControl = ({ count, itemId }) => {
     }
   };
   return (
-    <div
-      className="items-add-remove-button"
-    >
-      <IoMdRemove onClick={handleDecrease}/>
+    <div className="items-add-remove-button">
+      <IoMdRemove onClick={handleDecrease} />
       <span>{count}</span>
-      <IoMdAdd onClick={handleIncrease}/>
+      <IoMdAdd onClick={handleIncrease} />
     </div>
   );
 };

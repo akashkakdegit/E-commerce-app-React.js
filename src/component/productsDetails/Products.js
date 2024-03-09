@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/cartSlice";
@@ -32,36 +32,33 @@ const Products = ({ products }) => {
   };
   return (
     <>
-    <div className="products-main-container">
-      <hr className="divider" />
-      <div className="products-container">
-        <div className="image-containers">
-          <img className="product-images" src={prod.image} alt={prod.title} />
-        </div>
-        <div className="product-details">
-          <text className="title">{prod.title}</text>
+      <div className="products-main-container">
+        <hr className="divider" />
+        <div className="products-container">
+          <div className="image-containers">
+            <img className="product-images" src={prod.image} alt={prod.title} />
+          </div>
+          <div className="product-details">
+            <text className="title">{prod.title}</text>
 
-          <text className="product-rating">
-            Rating: {prod.rating.rate} ({prod.rating.count} reviews)
-          </text>
-          <text className="products-price">
-            {" "}
-            ${prod.price.toFixed(2) * counter}
-          </text>
-          <div className="button-container">
-            <div className="cart-add-remove-button">
-              <IoMdRemove size={"24px"} onClick={decrement} />
-              <text>{counter} </text>
-              <IoMdAdd size={"24px"} onClick={increment} />
-            </div>
-            {/* <Link to="/"> */}
+            <text className="product-rating">
+              Rating: {prod.rating.rate} ({prod.rating.count} reviews)
+            </text>
+            <text className="products-price">
+              ${prod.price.toFixed(2) * counter}
+            </text>
+            <div className="button-container">
+              <div className="cart-add-remove-button">
+                <IoMdRemove size={"24px"} onClick={decrement} />
+                <text>{counter} </text>
+                <IoMdAdd size={"24px"} onClick={increment} />
+              </div>
               <button className="cart-button" onClick={handleAddItem}>
                 Add to Cart
               </button>
-            {/* </Link> */}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

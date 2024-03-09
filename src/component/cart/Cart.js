@@ -23,7 +23,7 @@ const Cart = () => {
   return (
     <>
       {cartItem.length !== 0 ? (
-        <div>
+        <div className="cart-main-container">
           <hr className="divider" />
           <div className="main-container">
             <div>
@@ -32,7 +32,7 @@ const Cart = () => {
               </div>
               <div className="cart-container">
                 <div className="cart-item-container">
-                  {cartItem.map((item,index) => (
+                  {cartItem.map((item, index) => (
                     <div>
                       <div className="cart-items" key={item?.id}>
                         <div className="cart-items-image-container">
@@ -78,7 +78,9 @@ const Cart = () => {
                           </div>
                         </div>
                       </div>
-                      {index !== cartItem.length - 1 && <hr className="items-devider" />}
+                      {index !== cartItem.length - 1 && (
+                        <hr className="items-devider" />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -103,9 +105,11 @@ const Cart = () => {
                       <text className="total-price">${total.toFixed(2)}</text>
                     </div>
                   </div>
-                  <button className="cart-button">
-                    Go to Checkout <FaArrowRightLong />
-                  </button>
+                  <div className="cart-checkout-button-container">
+                    <button className="cart-checkout-button">
+                      Go to Checkout <FaArrowRightLong />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -114,9 +118,13 @@ const Cart = () => {
       ) : (
         <div className="empty-cart ">
           <text className="empty-cart-text">Your Cart is empty</text>
-          <img className="empty-cart-image" src="./Assets/empty-cart.jpg" alt="empty cart"/>
-          <Link to='/'>
-          <button className="shop-now-button">Shop Now</button>
+          <img
+            className="empty-cart-image"
+            src="./Assets/empty-cart.jpg"
+            alt="empty cart"
+          />
+          <Link to="/">
+            <button className="shop-now-button">Shop Now</button>
           </Link>
         </div>
       )}

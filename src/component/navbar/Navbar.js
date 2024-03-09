@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 import "./Navbar.css";
 import { useSelector } from "react-redux";
 const Navbar = ({ searchByCategory }) => {
@@ -13,9 +14,18 @@ const Navbar = ({ searchByCategory }) => {
   );
 
   const [searchItem, setSearchItem] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleShowAll = () => {
+    setShowMenu(!showMenu);
+  };
 
   const handleChange = (event) => {
-    setSearchItem(event.target.value);
+    const inputValue = event.target.value;
+    setSearchItem(inputValue);
+    if (inputValue === "") {
+      searchByCategory("");
+    }
   };
 
   const handleSearch = () => {
@@ -25,16 +35,33 @@ const Navbar = ({ searchByCategory }) => {
   return (
     <nav className="navbar">
       <ul className="nav-links">
+        <li className="menu-bar">
+          <IoMenu onClick={toggleShowAll} size={"24px"} />
+          {showMenu ? (
+            <div className="menu-list">
+              <Link to="/" onClick={() => setShowMenu(false)}>
+                Shop
+              </Link>
+              <Link to="/" onClick={() => setShowMenu(false)}>
+                On Sale
+              </Link>
+              <Link to="/" onClick={() => setShowMenu(false)}>
+                New Arrivals
+              </Link>
+              <Link to="/" onClick={() => setShowMenu(false)}>
+                Brands
+              </Link>
+            </div>
+          ) : null}
+        </li>
         <li>
-          <Link to="/" className="shop-name" onClick={handleSearch}>
+          <Link to="/" className="shop-name">
             SHOP.CO
           </Link>
         </li>
         <div className="nav-list">
           <li>
-            <Link to="/" onClick={handleSearch}>
-              Shop
-            </Link>
+            <Link to="/">Shop</Link>
           </li>
           <li>
             <Link to="/contact">On Sale</Link>
@@ -65,7 +92,11 @@ const Navbar = ({ searchByCategory }) => {
         </div>
         <div className="right-icons">
           <Link to="/cart" className="cart-icon">
-            <FiShoppingCart size="24px" />
+            <FiShoppingCart
+              size="24px"
+              data-testid={"cart-button"}
+              onClick={() => setShowMenu(false)}
+            />
             <text className="totalItems">{totalItems}</text>
           </Link>
           <FaRegUserCircle size="24px" />

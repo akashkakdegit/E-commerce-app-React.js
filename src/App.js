@@ -45,19 +45,25 @@ const App = () => {
   return (
     <Provider store={appStore}>
       <Router>
-          <Header />
-          <Navbar searchByCategory={searchByCategory} />
-          <Routes>
-            <Route
-              path="/"
-              element={<Home products={selectedCategory ? filteredProducts : products} />}
-            />
-            <Route
-              path="/products/:id"
-              element={<Product products={selectedCategory ? filteredProducts : products} />}
-            />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+        <Header />
+        <Navbar searchByCategory={searchByCategory} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home products={selectedCategory ? filteredProducts : products} />
+            }
+          />
+          <Route
+            path="/products/:id"
+            element={
+              <Product
+                products={selectedCategory ? filteredProducts : products}
+              />
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
         <Footer />
       </Router>
     </Provider>
@@ -65,4 +71,3 @@ const App = () => {
 };
 
 export default App;
-

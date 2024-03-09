@@ -12,6 +12,8 @@
 
 .nav-links {
   list-style: none;
+  width: 100%;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -25,6 +27,9 @@
   }
 }
 
+.menu-bar {
+  display: none;
+}
 .nav-links a {
   text-decoration: none;
   color: #000000;
@@ -39,10 +44,11 @@
 }
 .search-container {
   position: relative;
+  width: 30%;
 }
 .search {
   padding: 0px;
-  width: 577px;
+  width: 90%;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -91,4 +97,72 @@
   position: absolute;
   bottom: 25px;
   left: 6px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 24px 50px 24px 50px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .navbar {
+    padding: 24px 50px 24px 50px;
+  }
+  .search-container {
+    margin-right: 30px;
+  }
+
+  .right-icons {
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 425px) {
+  .navbar {
+    padding: 25px 16px;
+  }
+
+  .nav-links {
+    padding: 0px;
+    gap: 16px;
+    justify-content: unset;
+    & .shop-name {
+      font-size: 25px;
+      line-height: 10px;
+    }
+  }
+  .menu-bar {
+    display: block;
+    padding: 0px;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .nav-list {
+    display: none;
+  }
+
+  .search-container {
+    width: auto;
+    margin-left: 115px;
+  }
+  .search {
+    display: none;
+  }
+  .search-icon {
+    position: relative;
+  }
+  .right-icons {
+    gap: 15px;
+  }
 }

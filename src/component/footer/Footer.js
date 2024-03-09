@@ -9,29 +9,35 @@ const Footer = () => {
   return (
     <>
       <div className="footer-container">
-        <div className="section-1">
-          <div className="heading">
-            STAY UPTO DATE ABOUT <br /> OUR LATEST OFFERS
-          </div>
-          <div className="subscribe">
-            <input className="email" placeholder="Enter your email address" />
-            <button className="button">Subscribe to Newsletter</button>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className="section-1">
+            <div className="heading">
+              STAY UPTO DATE ABOUT <br className="line-break" /> OUR LATEST
+              OFFERS
+            </div>
+            <div className="subscribe">
+              <input className="email" placeholder="Enter your email address" />
+              <button className="button">Subscribe to Newsletter</button>
+            </div>
           </div>
         </div>
         <div className="section-2-container">
           <div className="section-2">
-            <div className="footer-section-2">
-              <text className="logo">SHOP.CO</text>
-              <text className="text">
-                We have clothes that suits your style and <br /> which you’re
-                proud to wear. <br />
-                From women to men.
-              </text>
-              <div className="icons">
-                <AiFillTwitterCircle size="28px" />
-                <FaFacebook size="28px" />
-                <AiFillInstagram size="28px" />
-                <FaGithub size="28px" />
+            <div className="footer-shop-section">
+              <div className="footer-section-2">
+                <text className="logo">SHOP.CO</text>
+                <text className="text">
+                  We have clothes that suits your style and{" "}
+                  <br className="line-break" /> which you’re proud to wear.{" "}
+                  <br className="line-break" />
+                  From women to men.
+                </text>
+                <div className="icons">
+                  <AiFillTwitterCircle size="28px" />
+                  <FaFacebook size="28px" />
+                  <AiFillInstagram size="28px" />
+                  <FaGithub size="28px" />
+                </div>
               </div>
             </div>
             <div className="footer-section-2">
@@ -95,13 +101,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          {/* <hr
-          style={{
-            marginTop: "64px",
-            marginBottom: "64px",
-            borderColor: "black",
-          }} 
-        />*/}
+          <hr className="devider" />
           <div className="bottom-section">
             <text className="text">© 2000-2021, All rights reserved</text>
             <div className="payment-options">
