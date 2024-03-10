@@ -192,7 +192,7 @@
 }
 @media (min-width: 321px) and (max-width: 425px) {
   .cart-main-container {
-    margin: 40px 15px 90px 15px;
+    margin: 0px 15px 90px 15px;
   }
   .main-container {
     flex-direction: column;

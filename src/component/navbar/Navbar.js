@@ -15,9 +15,14 @@ const Navbar = ({ searchByCategory }) => {
 
   const [searchItem, setSearchItem] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
-  const toggleShowAll = () => {
+  const toggleShowMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const toggleShowSearch = () => {
+    setShowSearch(!showSearch);
   };
 
   const handleChange = (event) => {
@@ -36,7 +41,13 @@ const Navbar = ({ searchByCategory }) => {
     <nav className="navbar">
       <ul className="nav-links">
         <li className="menu-bar">
-          <IoMenu onClick={toggleShowAll} size={"24px"} />
+          <IoMenu
+            onClick={() => {
+              toggleShowMenu();
+              setShowSearch(false);
+            }}
+            size={"24px"}
+          />
           {showMenu ? (
             <div className="menu-list">
               <Link to="/" onClick={() => setShowMenu(false)}>
@@ -55,7 +66,14 @@ const Navbar = ({ searchByCategory }) => {
           ) : null}
         </li>
         <li>
-          <Link to="/" className="shop-name">
+          <Link
+            to="/"
+            className="shop-name"
+            onClick={() => {
+              setShowSearch(false);
+              setShowMenu(false);
+            }}
+          >
             SHOP.CO
           </Link>
         </li>
@@ -90,12 +108,44 @@ const Navbar = ({ searchByCategory }) => {
             onClick={handleSearch}
           />
         </div>
+        <div className="search-container-mobile-view">
+          <IoSearch
+            className="search-icon-mobile-view"
+            size="21px"
+            onClick={() => {
+              toggleShowSearch();
+              setShowMenu(false);
+            }}
+          />
+          {showSearch ? (
+            <div className="mobile-search-container">
+              <input
+                placeholder="Search for products..."
+                className="mobile-view-search"
+                onChange={handleChange}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
+              />
+              <IoSearch
+                className="input-search-icon"
+                size="16px"
+                onClick={handleSearch}
+              />
+            </div>
+          ) : null}
+        </div>
         <div className="right-icons">
           <Link to="/cart" className="cart-icon">
             <FiShoppingCart
               size="24px"
               data-testid={"cart-button"}
-              onClick={() => setShowMenu(false)}
+              onClick={() => {
+                setShowMenu(false);
+                setShowSearch(false);
+              }}
             />
             <text className="totalItems">{totalItems}</text>
           </Link>

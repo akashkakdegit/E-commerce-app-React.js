@@ -98,6 +98,9 @@
   bottom: 25px;
   left: 6px;
 }
+.search-container-mobile-view{
+  display: none;
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .navbar {
@@ -152,15 +155,47 @@
     display: none;
   }
 
-  .search-container {
-    width: auto;
+  .search-container-mobile-view {
+    width: 30%;
     margin-left: 115px;
+    display: block;
   }
-  .search {
+  .search-container {
     display: none;
   }
-  .search-icon {
-    position: relative;
+  .mobile-search-container{
+    position:absolute;
+    width: 57%;
+    left: 50px;
+  }
+  .mobile-view-search{
+    padding: 0px;
+    height: 15px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    border-radius: 62px;
+    border: 1px solid #f0f0f0;
+    color: #00000066;
+    background-color: #f0f0f0;
+    padding: 5px 10px 5px 30px;
+    gap: 12px;
+  }
+  .mobile-view-search:focus{
+    outline: none;
+    border: 1px solid lightgrey;
+  }
+  .search-icon-mobile-view {
+    color: #00000066;
+    top: 20%;
+    left: 10px;
+  }
+  .input-search-icon{
+    position: absolute;
+    color: #00000066;
+    top: 24%;
+    left: 10px;
   }
   .right-icons {
     gap: 15px;
