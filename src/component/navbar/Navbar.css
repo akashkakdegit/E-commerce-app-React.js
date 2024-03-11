@@ -29,6 +29,7 @@
 
 .menu-bar {
   display: none;
+  cursor: pointer;
 }
 .nav-links a {
   text-decoration: none;
@@ -190,6 +191,7 @@
     color: #00000066;
     top: 20%;
     left: 10px;
+    cursor: pointer;
   }
   .input-search-icon{
     position: absolute;
