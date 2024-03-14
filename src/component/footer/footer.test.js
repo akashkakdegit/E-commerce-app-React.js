@@ -8,7 +8,7 @@ describe('footer component',()=>{
             <Footer/>
         )
         expect(container).toBeInTheDocument();
-        /*new test*/
+        
         expect(screen.getByText('STAY UPTO DATE ABOUT OUR LATEST OFFERS')).toBeInTheDocument();
 
 
