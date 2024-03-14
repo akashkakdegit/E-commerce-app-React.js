@@ -11,13 +11,13 @@ const Footer = () => {
       <div className="footer-container">
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div className="section-1">
-            <div className="heading">
+            <text className="heading">
               STAY UPTO DATE ABOUT <br className="line-break" /> OUR LATEST
               OFFERS
-            </div>
+            </text>
             <div className="subscribe">
               <input className="email" placeholder="Enter your email address" />
-              <button className="button">Subscribe to Newsletter</button>
+              <button className="button" data-testid={'subscribe-button'}>Subscribe to Newsletter</button>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <text className="logo">SHOP.CO</text>
                 <text className="text">
                   We have clothes that suits your style and{" "}
-                  <br className="line-break" /> which you’re proud to wear.{" "}
+                  <br className="line-break" /> which you're proud to wear.{" "}
                   <br className="line-break" />
                   From women to men.
                 </text>

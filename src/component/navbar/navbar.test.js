@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import appStore from '../store/appStore';
 
-describe('Header Component', () => {
-  test('renders header text and sign-up button', async() => {
+
+describe('Navbar Component', () => {
+  test('renders nav-items and cart-button', async() => {
     const { container} = render(
         <Provider store={appStore}>
       <Router>
@@ -23,4 +24,23 @@ describe('Header Component', () => {
     expect(screen.getByTestId('cart-button')).toBeInTheDocument();
     fireEvent.click(screen.getByTestId('cart-button'));
   });
+
+  test("Search functionality works correctly", () => {
+    const searchByCategory = jest.fn();
+    render(
+      <Router>
+        <Provider store={appStore}>
+          <Navbar searchByCategory={searchByCategory} />
+        </Provider>
+      </Router>
+    );
+    const searchInput = screen.getByPlaceholderText("Search for products...");
+    expect(searchInput).toBeInTheDocument();
+    fireEvent.change(searchInput, { target: { value: "test" } });
+    expect(searchInput.value).toBe("test");
+    fireEvent.keyDown(searchInput, { key: "Enter", code: "Enter" });
+    expect(searchByCategory).toHaveBeenCalledWith("test");
+  });
+
+
 });

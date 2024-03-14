@@ -7,7 +7,7 @@ import { IoMenu } from "react-icons/io5";
 import "./Navbar.css";
 import { useSelector } from "react-redux";
 const Navbar = ({ searchByCategory }) => {
-  const cartItem = useSelector((store) => store.cart.items);
+  const cartItem = useSelector((store) => store.cart.items)|| [];
   const totalItems = cartItem.reduce(
     (accumulator, currentItem) => accumulator + currentItem.quantity,
     0
