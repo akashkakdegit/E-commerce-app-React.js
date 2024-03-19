@@ -27,22 +27,22 @@ const Footer = () => {
               <div className="footer-section-2">
                 <text className="logo">SHOP.CO</text>
                 <text className="text">
-                  We have clothes that suits your style and{" "}
-                  <br className="line-break" /> which you're proud to wear.{" "}
+                  We have clothes that suits your style and
+                  <br className="line-break" /> which youre proud to wear.
                   <br className="line-break" />
                   From women to men.
                 </text>
                 <div className="icons">
-                  <AiFillTwitterCircle size="28px" />
-                  <FaFacebook size="28px" />
-                  <AiFillInstagram size="28px" />
-                  <FaGithub size="28px" />
+                  <AiFillTwitterCircle size="28px" data-testid={'twitter-icon'} />
+                  <FaFacebook size="28px" data-testid={'facebook-icon'} />
+                  <AiFillInstagram size="28px" data-testid={'instagram-icon'}/>
+                  <FaGithub size="28px" data-testid={'github-icon'} />
                 </div>
               </div>
             </div>
             <div className="footer-section-2">
               <text className="footer-section-2-title">COMPANY</text>
-              <a href="name1" className="sub-title">
+              <a href="name1" className="sub-title" data-testid={'about'}>
                 About
               </a>
               <a href="name1" className="sub-title">

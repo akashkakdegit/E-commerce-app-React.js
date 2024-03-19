@@ -19,9 +19,9 @@ const QuantityControl = ({ count, itemId }) => {
   };
   return (
     <div className="items-add-remove-button">
-      <IoMdRemove onClick={handleDecrease} />
+      <IoMdRemove onClick={handleDecrease} data-testid={'remove-button'}/>
       <span>{count}</span>
-      <IoMdAdd onClick={handleIncrease} />
+      <IoMdAdd onClick={handleIncrease} data-testid={'add-button'}/>
     </div>
   );
 };

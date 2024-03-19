@@ -4,6 +4,7 @@ import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/cartSlice";
 import "./Products.css";
+import ImageComponent from "../../common/image/ImageComponent";
 
 const Products = ({ products }) => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const Products = ({ products }) => {
         <hr className="divider" />
         <div className="products-container">
           <div className="image-containers">
-            <img className="product-images" src={prod.image} alt={prod.title} />
+            <ImageComponent src={prod.image} alt={prod.title} className="product-images" />
           </div>
           <div className="product-details">
             <text className="title">{prod.title}</text>

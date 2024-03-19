@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 import { removeItem, clearCart } from "../store/cartSlice";
 import { RiDeleteBinFill } from "react-icons/ri";
 import QuantityControl from "../utils/QuantityControl";
-import { Link } from "react-router-dom/dist";
+import { Link } from "react-router-dom";
+import ImageComponent from "../../common/image/ImageComponent";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -36,11 +37,7 @@ const Cart = () => {
                     <div>
                       <div className="cart-items" key={item?.id}>
                         <div className="cart-items-image-container">
-                          <img
-                            className="cart-items-image"
-                            src={item?.image}
-                            alt={item?.title}
-                          />
+                          <ImageComponent src={item?.image} alt={item?.title}  className="cart-items-image"/>
                         </div>
                         <div>
                           <div className="cart-items-text-container">

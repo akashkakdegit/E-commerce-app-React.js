@@ -47,6 +47,7 @@ const Navbar = ({ searchByCategory }) => {
               setShowSearch(false);
             }}
             size={"24px"}
+            data-testid={'menu-button'}
           />
           {showMenu ? (
             <div className="menu-list">
@@ -106,6 +107,7 @@ const Navbar = ({ searchByCategory }) => {
             className="search-icon"
             size="21px"
             onClick={handleSearch}
+            data-testid={'search-icon'}
           />
         </div>
         <div className="search-container-mobile-view">

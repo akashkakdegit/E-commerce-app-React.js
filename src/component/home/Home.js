@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import ImageComponent from "../../common/image/ImageComponent";
 
 const Home = ({ products }) => {
   const [showAll, setShowAll] = useState(false);
@@ -24,17 +25,13 @@ const Home = ({ products }) => {
                   to={`/products/${product.id}`}
                   className="image-container"
                 >
-                  <img
-                    className="product-image"
-                    src={product.image}
-                    alt={product.title}
-                  />
+                  <ImageComponent src={product.image} alt={product.title} className="product-image"/>
                 </Link>
-                <div className="product-title">{product.title}</div>
-                <div className="product-rating">
+                <text className="product-title" data-testid={'title'}>{product.title}</text>
+                <text className="product-rating">
                   Rating: {product.rating.rate} ({product.rating.count} reviews)
-                </div>
-                <div className="product-price">${product.price}</div>
+                </text>
+                <text className="product-price">${product.price}</text>
               </div>
             ))}
         </div>

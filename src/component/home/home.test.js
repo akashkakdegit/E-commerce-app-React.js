@@ -33,7 +33,12 @@ describe("Home Component", () => {
     );
     expect(container).toBeInTheDocument();
     expect(screen.getByText("Product 1")).toBeInTheDocument();
-    expect(screen.getByText("Product 2")).toBeInTheDocument();
+    expect(screen.getByText(`$${products[0].price}`)).toBeInTheDocument();
+
+//     console.log(
+//       `Rating:${products[0].rating?.rate}(${products[0].rating?.count}reviews)`
+//     );
+//     expect(screen.getByText(`Rating:${products[0].rating?.rate}(${products[0].rating?.count}reviews)`)).toBeInTheDocument();
   });
 
   it("toggles between showing all products and a limited number of products", () => {
@@ -46,7 +51,7 @@ describe("Home Component", () => {
     );
 
     // Check if "View all" button exists and click it
-    expect( screen.getByText("View all")).toBeInTheDocument();
+    expect(screen.getByText("View all")).toBeInTheDocument();
     fireEvent.click(screen.getByText("View all"));
 
     // Check if "Show less" button is displayed after clicking "View all"
